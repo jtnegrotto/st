@@ -212,7 +212,8 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
-static char *graburlcmd[] = {"/bin/sh", "-c", "linkgrabber", "externalpipe", NULL};
+static char *graburlcmd[] = {"/bin/sh", "-c", "graburl", "externalpipe", NULL};
+static char *textdumpcmd[] = {"/bin/sh", "-c", "textdump", "externalpipe", NULL};
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -232,6 +233,7 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
 	{ TERMMOD,              XK_U,           externalpipe,   {.v = graburlcmd}},
+	{ TERMMOD,              XK_D,           externalpipe,   {.v = textdumpcmd}},
 };
 
 /*
